@@ -8,7 +8,7 @@ var MESSAGE =
 "i really do not Know where to start, You have really done so much for me. From putting me through school, providing for me, and even standing by me during my health issues and when i needed it the most.\n\n" +
 "You are one of the  people I really look up to the most, and one of the reasons i know nothing is impossible if you stick to it.\n\n" +
 "I really can never repay you for everything you have done for me, but I hope this year gives back to you everything you have given to others.\n\n" +
-"Thank you for everything. I love you. i Hope you have a Very Event full BIRTHDAY!. Hope you enjoy your day, you deserve it! LIKE MAD 🫡22\n\n" +
+"Thank you for everything. I love you. i Hope you have a Very Event full BIRTHDAY!. Hope you enjoy your day, you deserve it! LIKE MAD 🫡\n\n" +
 "— " + SIGNED;
 var JOKES = [
   
