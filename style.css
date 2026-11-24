@@ -1,0 +1,358 @@
+/* ---------- Colours and page setup ---------- */
+:root {
+  color-scheme: dark;
+  --bg1: #1b1035;
+  --bg2: #3b1b5e;
+  --card: #fff8ee;
+  --ink: #2a1a3d;
+  --accent: #ff6b6b;
+  --gold: #ffc857;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px)
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0
+}
+
+body {
+  background: radial-gradient(circle at 30% 20%, var(--bg2), var(--bg1));
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  background-image: url(images/IMG_2187.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5
+}
+
+/* ---------- Layout and text ---------- */
+.screen {
+  width: min(92vw, 440px);
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+}
+
+.hidden {
+  display: none
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin: .2em 0;
+  
+}
+
+p {
+  line-height: 1.5;
+ 
+}
+
+.lock {
+  font-size: 3.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-8px)
+  }
+}
+
+/* ---------- Password box and buttons ---------- */
+input {
+  width: 100%;
+  font-size: 1.4rem;
+  text-align: center;
+  letter-spacing: .15em;
+  padding: 14px;
+  border-radius: 12px;
+  border: 2px solid var(--gold);
+  background: #ffffff14;
+  color: #fff;
+  margin: 14px 0;
+  outline: none
+}
+
+input::placeholder {
+  color: #ffff;
+  letter-spacing: .05em;
+  font-size: 1rem
+}
+
+button {
+  font: inherit;
+  font-size: 1.1rem;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 11px;
+  background: #111111;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 18px #0006
+}
+
+button:active {
+  transform: scale(.97)
+}
+
+.err {
+  color: var(--gold);
+  min-height: 1.5em;
+  font-size: .95rem
+}
+
+.shake {
+  animation: shake .4s
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(-10px)
+  }
+
+  75% {
+    transform: translateX(10px)
+  }
+}
+
+/* ---------- The birthday card ---------- */
+.card {
+  background: var(--card);
+  color: var(--ink);
+  border-radius: 18px;
+  padding: 28px 24px;
+  text-align: left;
+  box-shadow: 0 20px 50px #0008;
+  animation: pop .6s ease
+}
+
+@keyframes pop {
+  from {
+    transform: scale(.85) translateY(20px);
+    opacity: 0
+  }
+}
+
+.card h2 {
+  margin: 0 0 .4em;
+  text-align: center;
+  color: #111111;
+  font-size: 1.7rem
+}
+
+#msg {
+  min-height: 7em;
+  white-space: pre-wrap;
+  font-size: 1.05rem
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--ink);
+  vertical-align: -2px;
+  animation: blink 4s steps(1) infinite
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0
+  }
+}
+
+/* ---------- Thank-you notes ---------- */
+.jokes {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center
+}
+
+.joke {
+  background: #2a1a3d12;
+  border: 1px dashed var(--ink);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: .9rem;
+  cursor: pointer;
+  color: var(--ink)
+}
+
+.joke b {
+  display: block
+}
+
+.joke span {
+  display: none;
+  opacity: .85
+}
+
+.joke.open span {
+  display: block
+}
+
+.again {
+  margin-top: 18px;
+  text-align: center
+}
+
+
+.show {
+  margin-top: 18px;
+  text-align: center
+}
+
+.show h3 {
+  margin: 0 0 10px;
+  color: #111111;
+  font-size: 1.15rem
+}
+
+.frame {
+  position: relative;
+  height: 340px;
+  border-radius: 14px;
+  background: #1b1035;
+  overflow: hidden;
+  touch-action: pan-y
+}
+
+.frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity .7s
+}
+
+.frame img.on {
+  opacity: 1
+}
+
+.nav {
+  position: absolute;
+  top: calc(50% - 22px);
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  background: #000a;
+  font-size: 1.5rem;
+  line-height: 1;
+  box-shadow: none;
+  z-index: 2;
+  touch-action: manipulation
+}
+
+.nav:active {
+  transform: none;
+  background: #000d
+}
+
+.frame img {
+  cursor: zoom-in
+}
+
+
+#lb {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: #000e;
+  display: none;
+  align-items: center;
+  justify-content: center
+}
+
+#lb.open {
+  display: flex
+}
+
+#lbimg {
+  max-width: 96vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 8px
+}
+
+#lb button {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  background: #ffffff26;
+  font-size: 1.6rem;
+  line-height: 1;
+  box-shadow: none
+}
+
+#lb button:active {
+  transform: none
+}
+
+#lbx {
+  top: calc(env(safe-area-inset-top, 0px) + 14px);
+  right: 14px
+}
+
+#lbp {
+  left: 10px;
+  top: calc(50% - 24px)
+}
+
+#lbn {
+  right: 10px;
+  top: calc(50% - 24px)
+}
+
+.nav.l {
+  left: 8px
+}
+
+.nav.r {
+  right: 8px
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap
+}
+
+.dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2a1a3d33;
+  cursor: pointer
+}
+
+.dots i.on {
+  background: var(--accent)
+}

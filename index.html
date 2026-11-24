@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A little something for you 🎁</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="lb"><img id="lbimg" alt=""><button id="lbx" aria-label="Close">✕</button><button id="lbp" aria-label="Previous">‹</button><button id="lbn" aria-label="Next">›</button></div>
+
+<div class="screen" id="lock">
+  <div class="lock">🔒</div>
+  <h1>Hold on, birthday boy!</h1>
+  <p>This is locked. Enter your date of birth to open it.</p>
+  <input id="pw" inputmode="numeric" autocomplete="off" placeholder="DD / MM / YYYY" maxlength="14">
+  <div class="err" id="err"></div>
+  <button id="go">Unlock </button>
+</div>
+
+<div class="screen hidden" id="cardwrap">
+  <div class="card">
+    <h2 id="title"></h2>
+    <div id="msg"></div><span class="cursor" id="cur"></span>
+    <div class="jokes hidden" id="jokes"></div>
+    <div class="show hidden" id="show">
+      <h3>Here You goooo Enjoyyy</h3>
+      <div class="frame" id="frame">
+        <button class="nav l" id="prev" aria-label="Previous">‹</button>
+        <button class="nav r" id="next" aria-label="Next">›</button>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+    <div class="again hidden" id="again"><button id="more">Hip Hip Hip, HURRAY!! 🎉</button></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
